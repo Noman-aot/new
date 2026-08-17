@@ -1,0 +1,4032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caff Stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black">
+
+<!-- ============================================================ -->
+<!--  NAVBAR + DROPDOWNS        -->
+<!-- ============================================================ -->
+<div class="sticky top-5 z-[100] max-w-[1150px] mx-auto mt-5 relative">
+
+    <nav class="nav-shell px-5 py-2 bg-[#141414] border border-[#2a2a2a] rounded-[28px] shadow-lg shadow-black/60 flex items-center justify-between">
+
+        <!-- Caff Stack Logo -->
+        <a href="#" class="bg-black rounded-xl px-3 py-1 flex items-center border border-[#2e2e2e]">
+            <img src="white-logo.png" alt="Caff Stack" class="w-[150px] h-auto">
+        </a>
+
+        <!-- Navigation -->
+        <div class="flex items-center gap-7 text-[16px] text-gray-400">
+
+            <!-- Hire Developer -->
+            <button id="hireBtn"
+                class="flex items-center gap-2 hover:text-yellow-400 transition">
+                Hire Developer
+
+                <svg id="hireArrow"
+                    class="w-4 h-4 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Services -->
+            <button id="servicesBtn" class="flex items-center gap-2 hover:text-yellow-400 transition">
+                Services
+                <svg id="servicesArrow"
+                    class="w-4 h-4 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Solutions -->
+            <button id="solutionsBtn" class="flex items-center gap-2 hover:text-yellow-400 transition">
+                Solutions
+                <svg id="solutionsArrow"
+                    class="w-4 h-4 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Industries -->
+            <button id="industriesBtn" class="flex items-center gap-2 hover:text-yellow-400 transition">
+                Industries
+                <svg id="industriesArrow"
+                    class="w-4 h-4 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Cases (koi dropdown nahi, simple link hai) -->
+            <a href="#" class="hover:text-yellow-400 transition">
+                Cases
+            </a>
+
+            <!-- Company -->
+            <button id="companyBtn" class="flex items-center gap-2 hover:text-yellow-400 transition">
+                Company
+                <svg id="companyArrow"
+                    class="w-4 h-4 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M19 9l-7 7-7-7">
+                    </path>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Online Estimate -->
+        <a href="#"
+            class="flex items-center gap-4 px-6 py-3 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-black font-semibold shadow-lg shadow-yellow-400/20 transition duration-200">
+            Online Estimate
+            <span class="text-xl">→</span>
+        </a>
+
+    </nav>
+
+
+    <!-- ==================== HIRE DEVELOPER DROPDOWN ==================== -->
+    <div id="hireDropdown"
+        class="hidden absolute left-0 right-0 top-[78px] bg-[#141414] border border-[#2a2a2a] rounded-[25px] shadow-2xl shadow-black/70 overflow-hidden z-50">
+
+        <div class="grid grid-cols-[304px_repeat(4,1fr)] gap-x-6">
+
+            <!-- Hiring Models (pehla column - alag background) -->
+            <div class="px-6 py-7 bg-[#1c1c1c] border-r border-[#2a2a2a]">
+
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-6">
+                    Hiring Models
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit">
+                        <h4 class="text-[16px] font-medium text-white">
+                            Outstaffing
+                        </h4>
+                        <p class="text-xs text-gray-500 mt-1 leading-5 max-w-[80%]">
+                            Top-tier talent for your next project
+                        </p>
+                    </a>
+
+                    <a href="#" class="nav-item-link block w-fit">
+                        <h4 class="text-[16px] font-medium text-white">
+                            Outsourcing
+                        </h4>
+                        <p class="text-xs text-gray-500 mt-1 leading-5 max-w-[80%]">
+                            Pre-vetted and highly skilled teams
+                        </p>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- Front-end -->
+            <div class="py-7">
+
+                <h3 class="text-[16px] font-medium text-gray-400 mb-5">
+                    Front-end
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">ReactJS</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">VueJS</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">NextJS</a>
+                </div>
+
+            </div>
+
+
+            <!-- Back-end -->
+            <div class="py-7">
+
+                <h3 class="text-[16px] font-medium text-gray-400 mb-5">
+                    Back-end
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">PHP</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">.NET</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">NodeJS</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Laravel</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Golang</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Python</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Java</a>
+                </div>
+
+            </div>
+
+
+            <!-- Mobile -->
+            <div class="py-7">
+
+                <h3 class="text-[16px] font-medium text-gray-400 mb-5">
+                    Mobile
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Android App</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">iOS App</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">React Native</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Kotlin App</a>
+                </div>
+
+            </div>
+
+
+            <!-- Other -->
+            <div class="py-7 pr-6">
+
+                <h3 class="text-[16px] font-medium text-gray-400 mb-5">
+                    Other
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Developers</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">FullStack</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">DevOps</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">WordPress</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Symfony</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Shopify</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Magento</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">WooCommerce</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Drupal</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== SERVICES DROPDOWN ==================== -->
+    <div id="servicesDropdown"
+        class="hidden absolute left-0 right-0 top-[78px] bg-[#141414] border border-[#2a2a2a] rounded-[25px] shadow-2xl shadow-black/70 overflow-hidden z-50">
+
+        <div class="grid grid-cols-4 gap-x-6 p-6">
+
+            <!-- AI Solutions -->
+            <div>
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-4">
+                    AI Solutions
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Agents Development</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Automation Service</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Assistant Development</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Chatbot Development</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Development Company</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Recommendation System</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AIoT Development Services</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Computer Vision AI Solutions</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Consulting Services</a>
+                </div>
+            </div>
+
+            <!-- Product Development -->
+            <div>
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-4">
+                    Product Development
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Mobile Development</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Web Development</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">CRM Development</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">MVP Development</a>
+                </div>
+            </div>
+
+            <!-- Digital & Enterprise -->
+            <div>
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-4">
+                    Digital &amp; Enterprise
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">
+                        Cybersecurity and Penetration Testing
+                    </a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">
+                        Digital Transformation Consulting
+                    </a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">
+                        Software Development Consulting
+                    </a>
+                </div>
+            </div>
+
+            <!-- Software Engineering -->
+            <div>
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-4">
+                    Software Engineering
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">
+                        Cloud Software Development
+                    </a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">
+                        Custom Software Development
+                    </a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">
+                        Machine Learning Development
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ==================== SOLUTIONS DROPDOWN ==================== -->
+    <div id="solutionsDropdown"
+        class="hidden absolute left-0 right-0 top-[78px] bg-[#141414] border border-[#2a2a2a] rounded-[25px] shadow-2xl shadow-black/70 overflow-hidden z-50">
+
+        <div class="grid grid-cols-[304px_repeat(4,1fr)] gap-x-6">
+
+            <!-- Automated solutions -->
+            <div class="px-6 py-7 bg-[#1c1c1c] border-r border-[#2a2a2a]">
+
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-6">
+                    Automated solutions
+                </h3>
+
+                <a href="#" class="nav-item-link block w-fit">
+                    <h4 class="text-[16px] font-medium text-white">
+                        Caff Stack
+                    </h4>
+                    <p class="text-xs text-gray-500 mt-1 leading-5 max-w-[80%]">
+                        Boilerplate for development
+                    </p>
+                </a>
+
+            </div>
+
+
+            <!-- AI Agents -->
+            <div class="py-7">
+
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-4">
+                    AI Agents
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Voice Assistant Development</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Security Solutions</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">FinTech Voice AI Assistant</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Legal Voice AI Assistant</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Medical Voice AI Assistant</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Sales Voice AI Assistant</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">HR Voice AI Assistant</a>
+                </div>
+
+            </div>
+
+
+            <!-- AI Model Integrations -->
+            <div class="py-7">
+
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-4">
+                    AI Model Integrations
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">AI Models We Work With</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">OpenAI GPT Integration Services</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Gemini AI Integration</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Claude AI Integration</a>
+                </div>
+
+            </div>
+
+
+            <!-- Custom LLM Development -->
+            <div class="py-7">
+
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-4">
+                    Custom LLM Development
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">LLM Development</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Private LLM Deployment</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Open-Source LLM Development</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Generative AI Solutions</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">RAG Development Services</a>
+                </div>
+
+            </div>
+
+
+            <!-- Industry AI Solutions -->
+            <div class="py-7 pr-6">
+
+                <h3 class="text-[11px] font-semibold text-yellow-400 uppercase tracking-[0.2em] mb-4">
+                    Industry AI Solutions
+                </h3>
+
+                <div class="space-y-4">
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">FinTech AI Solutions</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Demand Forecasting Solutions</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Banking Software Development Services</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">E-Commerce Solutions</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">EdTech Solutions</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">EdTech for E-Government</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">E-Government Solutions</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Healthcare AI Solutions</a>
+                    <a href="#" class="nav-item-link block w-fit text-[16px] text-gray-300">Blockchain Solutions</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== INDUSTRIES DROPDOWN ==================== -->
+    <div id="industriesDropdown"
+        class="hidden absolute left-0 right-0 top-[78px] bg-[#141414] border border-[#2a2a2a] rounded-[25px] shadow-2xl shadow-black/70 overflow-hidden z-50">
+
+        <div class="grid grid-cols-4 gap-x-6 gap-y-4 p-10">
+
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Real Estate &amp; PropTech</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Healthcare &amp; MedTech</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">LegalTech &amp; eDiscovery</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Insurance &amp; InsurTech</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">HR Tech &amp; Recruitment</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Logistics &amp; Supply Chain</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Game &amp; Esports Tech</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Cybersecurity</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Telecom</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">AI Software Development</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Industrial &amp; Manufacturing</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Learning Management System</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Retail &amp; eCommerce</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Travel &amp; Hospitality</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Media &amp; Entertainment</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Startups &amp; Scaleups</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Sports</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">AgTech &amp; Agriculture</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== COMPANY DROPDOWN ==================== -->
+    <div id="companyDropdown"
+        class="hidden absolute left-0 right-0 top-[78px] bg-[#141414] border border-[#2a2a2a] rounded-[25px] shadow-2xl shadow-black/70 overflow-hidden z-50">
+
+        <div class="grid grid-cols-4 gap-x-6 gap-y-4 p-10">
+
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">About Us</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Leadership</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Insights</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Blog</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Contacts</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Careers</a>
+            <a href="#" class="nav-item-link block w-fit text-[16px] font-medium text-gray-300">Partnership</a>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ============ NAVBAR KHATAM ============ -->
+
+
+
+<!-- ============================================================ -->
+<!--  HERO SECTION -->
+<!-- ============================================================ -->
+<section class="hero-section relative min-h-[620px] flex flex-col items-center justify-center px-6 overflow-hidden">
+
+    <!-- Upar center mein halki si yellow glow  -->
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(250,204,21,0.10),transparent_70%)]"></div>
+
+    <!-- Top Small Badge -->
+    <div class="mb-6 px-5 py-2 rounded-full border border-[#2a2a2a] bg-[#141414] text-sm text-gray-300 shadow-sm">
+        Faster. Smarter. AI Assistants delivered at speed
+    </div>
+
+    <!-- Main Heading -->
+    <h1 class="max-w-4xl text-center text-5xl md:text-6xl lg:text-[62px] leading-[1.05] font-bold tracking-tight text-white">
+        <span class="text-yellow-400">AI-First</span> Software
+
+
+        Development Company
+    </h1>
+
+    <!-- Description -->
+    <p class="mt-6 max-w-2xl text-center text-lg leading-7 text-gray-400">
+        Just tell the Caff Stack AI Agent about your project – it will ask questions,
+        gather requirements, and propose a tailored solution
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-7 flex flex-col sm:flex-row items-center gap-4">
+
+        <a href="#"
+            class="px-6 py-3 rounded-xl border border-[#2a2a2a] bg-transparent text-white font-semibold shadow-md shadow-black/40 hover:bg-[#141414] hover:border-[#3a3a3a] transition duration-200">
+            Book a 30-min Consultation
+        </a>
+
+        <a href="#"
+            class="px-6 py-3 rounded-xl bg-yellow-400 text-black font-semibold shadow-lg shadow-yellow-400/25 hover:bg-yellow-300 transition duration-200">
+            Estimate Project Online
+        </a>
+
+    </div>
+
+    <!-- Small Green Badge -->
+    <div class="mt-7 px-3 py-1 rounded-full border border-green-500/50 text-sm text-gray-300 bg-[#0f0f0f]">
+        It takes 2-3 min
+    </div>
+
+
+    <!-- LEFT ROBOT -->
+    <div class="absolute left-[8%] top-[48%] hidden md:block animate-float-slow">
+
+        <div class="relative">
+
+            <!-- Arrow -->
+            <div class="absolute -top-8 left-10 right-3 text-3xl text-gray-500 rotate-[320deg]">
+                ➤
+            </div>
+
+            <!-- Robot Circle -->
+            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 border-4 border-[#141414] shadow-lg shadow-yellow-400/20 flex items-center justify-center text-3xl">
+                🤖
+            </div>
+
+            <!-- Green Online Dot -->
+            <span class="absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-2 border-black rounded-full"></span>
+
+        </div>
+
+    </div>
+
+
+   <!-- TOP RIGHT PERSON -->
+<div class="absolute right-[8%] top-[13%] hidden md:block animate-float">
+
+    <div class="relative">
+
+        <!-- Arrow pointing toward center -->
+        <div class="absolute -left-10 bottom-[-22px] text-3xl text-gray-500 rotate-[135deg]">
+            ➤
+        </div>
+
+        <!-- Person Circle -->
+        <div class="w-16 h-16 rounded-full bg-gray-200 border-4 border-[#141414] shadow-lg overflow-hidden">
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-6zqmdlezUmR6w7vIXF8l3wLuL1DZU6K3hiPNPWkqqg&s=10"
+                alt="Developer"
+                class="w-full h-full object-cover">
+        </div>
+
+        <!-- Green Online Dot -->
+        <span class="absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-2 border-black rounded-full"></span>
+
+    </div>
+
+</div>
+
+
+<!-- RIGHT BOTTOM PERSON -->
+<div class="absolute right-[8%] top-[48%] hidden md:block animate-float-slow">
+
+    <div class="relative">
+
+        <!-- Arrow pointing toward center -->
+        <div class="absolute -left-10 top-[-22px] text-3xl text-gray-500 rotate-[225deg]">
+            ➤
+        </div>
+
+        <!-- Person Circle -->
+        <div class="w-16 h-16 rounded-full bg-gray-200 border-4 border-[#141414] shadow-lg overflow-hidden">
+            <img
+                src="girl.jpg"
+                alt="Developer"
+                class="w-full h-full object-cover">
+        </div>
+
+        <!-- Green Online Dot -->
+        <span class="absolute bottom-0 right-0 w-4 h-4 bg-green-400 border-2 border-black rounded-full"></span>
+
+    </div>
+
+</div>
+
+
+    <!-- Review / Trust Section -->
+    <div class="trust-row mt-14 flex flex-wrap items-center justify-center gap-8 text-gray-400">
+
+        <!-- Tech Behemoths -->
+        <div class="text-center">
+            <div class="text-xs text-gray-500">Trusted on</div>
+            <div class="font-bold text-white">Tech Behemoths</div>
+        </div>
+
+        <!-- Clutch -->
+        <div class="text-center">
+            <div class="text-xs text-gray-500">REVIEWED ON</div>
+            <div class="text-xl font-bold text-white">Clutch</div>
+            <div class="text-xs text-yellow-400">★★★★★</div>
+        </div>
+
+        <!-- GoodFirms -->
+        <div class="px-5 py-2 border border-[#2a2a2a] bg-[#141414] rounded-lg text-center shadow-sm">
+            <div class="text-sm font-semibold text-gray-200">GoodFirms</div>
+            <div class="text-xs text-yellow-400">★★★★★</div>
+            <div class="text-[10px] text-gray-500">Rating 5.0</div>
+        </div>
+
+        <!-- Sortlist -->
+        <div class="text-2xl font-bold text-gray-300">
+            sortlist
+        </div>
+
+        <!-- Selected Firms -->
+        <div class="text-center">
+            <div class="text-sm font-semibold text-gray-300">
+                Selected<span class="text-yellow-400">Firms</span>
+            </div>
+            <div class="text-[10px] text-gray-500">
+                Top Web Development Companies
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!--  SECTION HEADING → "Deploy AI Agents" -->
+<!-- ============================================================ -->
+<section class="metrics-heading py-20 px-6 bg-black">
+
+    <div class="max-w-4xl mx-auto text-center intro-copy">
+
+        <!-- Small Badge / Pill -->
+        <div class="inline-block mb-7 px-5 py-2 rounded-full border border-[#2a2a2a] bg-[#141414] text-sm text-gray-300 shadow-sm">
+            AI Agents &amp; Pre-built Solutions
+        </div>
+
+        <!-- Two Line Heading -->
+        <h2 class="text-4xl md:text-5xl lg:text-[52px] font-bold leading-[1.1] tracking-tight">
+            <!-- Pehli line → Yellow -->
+            <span class="text-yellow-400">
+                Deploy AI Agents and Custom Software
+            </span>
+            <br>
+            <!-- Doosri line → White -->
+            <span class="text-white">
+                That Move Business Metrics
+            </span>
+        </h2>
+
+    </div>
+
+</section>
+<!-- ============================================================ -->
+<!--  AI USE-CASES CAROUSEL (6 cards, loop chalta hai)          -->
+<!-- ============================================================ -->
+<section class="cases-section py-16 px-6 bg-black overflow-hidden">
+
+    <div class="max-w-[1150px] mx-auto relative carousel-shell">
+
+        <!-- LEFT ARROW -->
+        <button id="carouselPrev"
+            class="absolute -left-4 md:-left-6 top-[130px] z-20 w-12 h-12 rounded-full bg-[#141414] border border-[#2a2a2a] text-gray-300 hover:text-yellow-400 hover:border-yellow-400 transition flex items-center justify-center shadow-lg shadow-black/50">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <!-- RIGHT ARROW -->
+        <button id="carouselNext"
+            class="absolute -right-4 md:-right-6 top-[130px] z-20 w-12 h-12 rounded-full bg-[#141414] border border-[#2a2a2a] text-gray-300 hover:text-yellow-400 hover:border-yellow-400 transition flex items-center justify-center shadow-lg shadow-black/50">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+
+        <!-- ============ CAROUSEL VIEWPORT (jitna dikhega) ============ -->
+        <div class="overflow-hidden">
+
+            <!-- TRACK (yeh slide hoga left-right) -->
+            <div id="carouselTrack"
+                class="flex gap-6 transition-transform duration-500 ease-in-out">
+
+
+                <!-- ========== CARD 1 : Financial AI Agent ========== -->
+                <div class="carousel-card shrink-0 w-full md:w-[calc((100%-48px)/3)]">
+                    <div class="bg-[#0f0f0f] border border-[#2a2a2a] rounded-2xl overflow-hidden h-full hover:border-yellow-400/40 transition duration-300">
+
+                        <!-- Preview Image -->
+                        <div class="bg-gradient-to-br from-[#eef2ff] to-[#f8fafc] p-4">
+                            <img src="fintech-voice-ai-agent.jpg" alt="Financial AI Agent" class="w-full h-[220px] object-cover rounded-xl">
+                        </div>
+
+                        <!-- Card Text -->
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white underline decoration-yellow-400 decoration-2 underline-offset-4">
+                                Financial AI Agent
+                            </h3>
+                            <p class="mt-3 text-sm leading-6 text-gray-400">
+                                AI that answers finance ops in seconds – checks invoice status, collects payment intents, guides approvals, and explains forecast/variance with RAG playbooks.
+                            </p>
+
+                            <!-- Tags -->
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↓ manual workload by ~60%</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ on-time collections</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ forecast accuracy</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- ========== CARD 2 : Sales AI Agent ========== -->
+                <div class="carousel-card shrink-0 w-full md:w-[calc((100%-48px)/3)]">
+                    <div class="bg-[#0f0f0f] border border-[#2a2a2a] rounded-2xl overflow-hidden h-full hover:border-yellow-400/40 transition duration-300">
+                        <div class="bg-gradient-to-br from-[#eef2ff] to-[#f8fafc] p-4">
+                            <img src="sales-voice-ai-agent.jpg" alt="Sales AI Agent" class="w-full h-[220px] object-cover rounded-xl">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white underline decoration-yellow-400 decoration-2 underline-offset-4">
+                                Sales AI Agent
+                            </h3>
+                            <p class="mt-3 text-sm leading-6 text-gray-400">
+                                Voice and chat agents that respond in seconds, qualify leads (BANT/MEDDICC), book meetings, write recaps, and update CRM with RAG-powered playbooks.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↓ 90% speed-to-lead</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ 20–35% meeting rate</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ 35–55% CRM hygiene</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ========== CARD 3 : Medical Voice AI Assistant ========== -->
+                <div class="carousel-card shrink-0 w-full md:w-[calc((100%-48px)/3)]">
+                    <div class="bg-[#0f0f0f] border border-[#2a2a2a] rounded-2xl overflow-hidden h-full hover:border-yellow-400/40 transition duration-300">
+                        <div class="bg-gradient-to-br from-[#eef2ff] to-[#f8fafc] p-4">
+                            <img src="medical-voice-ai-agent.jpg" alt="Medical Voice AI Assistant" class="w-full h-[220px] object-cover rounded-xl">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white underline decoration-yellow-400 decoration-2 underline-offset-4">
+                                Medical Voice AI Assistant
+                            </h3>
+                            <p class="mt-3 text-sm leading-6 text-gray-400">
+                                HIPAA-ready voice agents for patient scheduling, triage, FAQs, consent collection, and automated note drafting with EHR/telephony integration.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↓ no-shows</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ scheduling efficiency</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ clinician time freed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ========== CARD 4 : Legal Voice AI Assistant ========== -->
+                <div class="carousel-card shrink-0 w-full md:w-[calc((100%-48px)/3)]">
+                    <div class="bg-[#0f0f0f] border border-[#2a2a2a] rounded-2xl overflow-hidden h-full hover:border-yellow-400/40 transition duration-300">
+                        <div class="bg-gradient-to-br from-[#eef2ff] to-[#f8fafc] p-4">
+                            <img src="legal-voice-ai-agent.jpg" alt="Legal Voice AI Assistant" class="w-full h-[220px] object-cover rounded-xl">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white underline decoration-yellow-400 decoration-2 underline-offset-4">
+                                Legal Voice AI Assistant
+                            </h3>
+                            <p class="mt-3 text-sm leading-6 text-gray-400">
+                                Confidential, compliant voice assistants for deposition capture, live transcripts, exhibit management, and certified records—using RAG-boosted legal terminology and jurisdiction guardrails.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↓ rough in &lt;2 hrs</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ certified in 24–48 hrs</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↓ 20-40% cost per proceeding</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ========== CARD 5 : AI Voice Assistants for HR ========== -->
+                <div class="carousel-card shrink-0 w-full md:w-[calc((100%-48px)/3)]">
+                    <div class="bg-[#0f0f0f] border border-[#2a2a2a] rounded-2xl overflow-hidden h-full hover:border-yellow-400/40 transition duration-300">
+                        <div class="bg-gradient-to-br from-[#eef2ff] to-[#f8fafc] p-4">
+                            <img src="hr-voice-ai-agent.jpg" alt="AI Voice Assistants for HR" class="w-full h-[220px] object-cover rounded-xl">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white underline decoration-yellow-400 decoration-2 underline-offset-4">
+                                AI Voice Assistants for HR
+                            </h3>
+                            <p class="mt-3 text-sm leading-6 text-gray-400">
+                                Agentic voice assistants that handle candidate calls, conduct pre-screening with your scorecards, schedule interviews, and summarize conversations.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↓ admin load</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ hiring speed</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ candidate experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ========== CARD 6 : Security Tech ========== -->
+                <div class="carousel-card shrink-0 w-full md:w-[calc((100%-48px)/3)]">
+                    <div class="bg-[#0f0f0f] border border-[#2a2a2a] rounded-2xl overflow-hidden h-full hover:border-yellow-400/40 transition duration-300">
+                        <div class="bg-gradient-to-br from-[#eef2ff] to-[#f8fafc] p-4">
+                            <img src="securitu-tech-voice-ai-agent.jpg" alt="Security Tech AI Voice Incident Agent" class="w-full h-[220px] object-cover rounded-xl">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white underline decoration-yellow-400 decoration-2 underline-offset-4">
+                                Security Tech (AI Voice Incident Agent)
+                            </h3>
+                            <p class="mt-3 text-sm leading-6 text-gray-400">
+                                Agentic voice assistants that verify alarms, triage incidents, dispatch via SOPs, and generate audit-ready reports—so operators handle threats, not toggles.
+                            </p>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↓ false dispatches</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↓ time-to-dispatch</span>
+                                <span class="px-3 py-1 rounded-full border border-[#2a2a2a] bg-[#141414] text-xs text-gray-300">↑ operator capacity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div><!-- track end -->
+        </div><!-- viewport end -->
+
+    </div>
+</section>
+
+
+<!-- ============================================================ -->
+<!--  DISCOVERY → LAUNCH / BUSINESS METRICS SECTION              -->
+<!-- ============================================================ -->
+<section class="metrics-section relative px-6 py-20 md:py-24 overflow-hidden">
+
+    <!-- Soft Caff Stack glow -->
+    <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] rounded-full bg-yellow-400/10 blur-3xl"></div>
+
+    <div class="max-w-[1150px] mx-auto relative z-10">
+
+        <!-- Heading Row -->
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-400/30 bg-yellow-400/10 text-sm font-medium text-yellow-500 mb-5">
+                    <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                    Caff Stack at a Glance
+                </div>
+
+                <h2 class="text-4xl md:text-5xl lg:text-[56px] leading-[1.06] font-bold tracking-tight text-black">
+                    From Discovery to Launch With
+                    <span class="text-yellow-500"> Senior Engineering Teams</span>
+                </h2>
+
+                <p class="mt-4 text-base md:text-lg text-gray-600">
+                    Don’t believe us? See for yourself.
+                </p>
+            </div>
+
+            <!-- Reviews -->
+            <div class="flex items-center gap-3 lg:pb-2">
+                <div class="text-right">
+                    <p class="text-sm text-gray-500">Proven by our</p>
+                    <a href="#" class="text-sm font-medium text-gray-900 underline underline-offset-4 decoration-yellow-400 hover:text-yellow-600 transition">
+                        customers feedback
+                    </a>
+                </div>
+
+                <div class="h-10 w-px bg-gray-200"></div>
+
+                <div class="text-center">
+                    <div class="text-[10px] uppercase tracking-[0.18em] text-gray-400">Reviewed on</div>
+                    <div class="font-bold text-gray-900 leading-none mt-1">Clutch</div>
+                    <div class="text-xs text-yellow-500 mt-1">★★★★★ <span class="text-[10px] text-gray-400">52 reviews</span></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Stats Cards -->
+        <div class="grid md:grid-cols-3 gap-5">
+
+            <!-- Stat 1 -->
+            <div class="metric-card rounded-[22px] border border-yellow-400/20 bg-white p-7 md:p-8 shadow-[0_18px_50px_rgba(0,0,0,0.08)]">
+                <div class="text-5xl md:text-6xl font-bold tracking-tight text-black">20</div>
+                <div class="mt-5 text-xl font-semibold text-gray-900">years in business</div>
+                <p class="mt-2 text-sm leading-6 text-gray-600">
+                    Two decades of predictable, secure delivery
+                </p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="metric-card rounded-[22px] border border-yellow-400/20 bg-white p-7 md:p-8 shadow-[0_18px_50px_rgba(0,0,0,0.08)]">
+                <div class="text-5xl md:text-6xl font-bold tracking-tight text-black">150+</div>
+                <div class="mt-5 text-xl font-semibold text-gray-900">experts on board</div>
+                <p class="mt-2 text-sm leading-6 text-gray-600">
+                    Cross-functional team: AI/ML, data, product
+                </p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="metric-card rounded-[22px] border border-yellow-400/20 bg-white p-7 md:p-8 shadow-[0_18px_50px_rgba(0,0,0,0.08)]">
+                <div class="text-5xl md:text-6xl font-bold tracking-tight text-black">800+</div>
+                <div class="mt-5 text-xl font-semibold text-gray-900">projects delivered</div>
+                <p class="mt-2 text-sm leading-6 text-gray-600">
+                    From MVPs to enterprise platforms across 15+ industries
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Award / Recognition Bar -->
+        <div class="mt-7 rounded-[22px] border border-yellow-400/20 bg-white px-6 py-6 md:px-8 md:py-7 shadow-[0_18px_50px_rgba(0,0,0,0.08)]">
+
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+
+                <div class="flex items-center gap-5">
+
+                    <!-- Caff Stack mark -->
+                    <div class="w-14 h-14 shrink-0 rounded-full bg-black border border-yellow-400/30 flex items-center justify-center shadow-lg shadow-yellow-400/10">
+                        <span class="text-2xl">☕</span>
+                    </div>
+
+                    <div>
+                        <p class="text-sm leading-6 text-gray-600 max-w-3xl">
+                            Caff Stack builds reliable software products with modern engineering,
+                            AI solutions, and scalable digital experiences.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-2 mt-2 text-sm font-semibold text-black hover:text-yellow-600 transition">
+                            Read more
+                            <span class="text-lg">→</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Recognition Card -->
+                <div class="recognition-card w-full lg:w-[170px] h-[76px] rounded-xl bg-black border border-yellow-400/30 flex flex-col items-center justify-center shadow-lg shadow-black/10">
+                    <span class="text-[10px] uppercase tracking-[0.18em] text-yellow-400">Caff Stack</span>
+                    <span class="mt-1 text-sm font-bold text-white">Tech Excellence</span>
+                    <span class="text-[10px] text-gray-400 mt-1">Software • AI • Web</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TESTIMONIALS SECTION -->
+<!-- ============================================================ -->
+<section class="testimonials-section relative overflow-hidden px-6 py-20 md:py-24">
+
+    <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[760px] h-[360px] rounded-full bg-yellow-300/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-32 -left-20 w-[360px] h-[360px] rounded-full bg-amber-200/20 blur-3xl"></div>
+
+    <div class="max-w-[1150px] mx-auto relative z-10">
+
+        <!-- Heading -->
+        <div class="text-center mb-12">
+
+            <div class="inline-flex items-center px-4 py-2 rounded-full border border-yellow-500/25 bg-yellow-400/10 text-xs font-semibold uppercase tracking-[0.18em] text-yellow-700">
+                Testimonials
+            </div>
+
+            <h2 class="mt-5 text-4xl md:text-5xl lg:text-[54px] leading-[1.05] font-bold tracking-tight text-[#141414]">
+                <span class="text-yellow-600">We are trusted</span>
+                by our customers
+            </h2>
+
+            <p class="mt-4 max-w-2xl mx-auto text-sm md:text-base leading-7 text-gray-600">
+                Real feedback from people and teams who trusted Caff Stack with their software journey.
+            </p>
+
+        </div>
+
+
+        <!-- Carousel -->
+        <div class="relative">
+
+            <!-- Previous -->
+            <button id="testimonialPrev"
+                type="button"
+                class="absolute -left-3 md:-left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white border border-gray-200 text-gray-500 hover:text-black hover:border-yellow-400 hover:bg-yellow-50 shadow-lg transition flex items-center justify-center">
+
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 19l-7-7 7-7">
+                    </path>
+                </svg>
+
+            </button>
+
+
+            <!-- Next -->
+            <button id="testimonialNext"
+    type="button"
+    class="absolute right-0 md:-right-2 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white border border-gray-200 text-gray-500 hover:text-black hover:border-yellow-400 hover:bg-yellow-50 shadow-lg transition flex items-center justify-center">
+
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5l7 7-7-7">
+        </path>
+    </svg>
+
+</button>
+
+
+            <!-- Viewport -->
+            <div class="overflow-hidden px-1 py-2">
+
+                <!-- Track -->
+                <div id="testimonialTrack"
+                    class="flex gap-5 transition-transform duration-500 ease-in-out">
+
+                    <!-- Card 1 -->
+                    <article class="testimonial-card shrink-0 w-full md:w-[calc((100%-40px)/3)] rounded-[22px] border border-gray-200 bg-white p-6 shadow-lg hover:border-yellow-400 hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-start justify-between">
+                            <span class="text-yellow-500">★★★★★</span>
+                            <span class="text-xs text-gray-400">01</span>
+                        </div>
+
+                        <h3 class="mt-5 text-lg font-bold leading-7 text-gray-900">
+                            “They really understand what we need. They’re very professional.”
+                        </h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-600">
+                            The 3D configurator has received positive feedback from customers. Moreover, it has generated 30% more business and increased leads significantly, giving the client confidence for the future. Overall, Caff Stack has led the project seamlessly.
+                        </p>
+
+                        <div class="mt-7 pt-5 border-t border-gray-200 flex items-center justify-between">
+
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">
+                                    Sergio Artemia
+                                </p>
+
+                                <p class="mt-1 text-xs text-gray-500">
+                                    Commercial Director, RNDpoint
+                                </p>
+                            </div>
+
+                            <div class="w-11 h-11 rounded-full border-2 border-yellow-400 overflow-hidden">
+                                <img src="https://plavno.io/media/img/main-page/sergio-artimenia-testimonial-photo.webp"
+                                    alt="Sergio Artemia"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Card 2 -->
+                    <article class="testimonial-card shrink-0 w-full md:w-[calc((100%-40px)/3)] rounded-[22px] border border-gray-200 bg-white p-6 shadow-lg hover:border-yellow-400 hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-start justify-between">
+                            <span class="text-yellow-500">★★★★★</span>
+                            <span class="text-xs text-gray-400">02</span>
+                        </div>
+
+                        <h3 class="mt-5 text-lg font-bold leading-7 text-gray-900">
+                            “We appreciated the impactful contributions of Caff Stack.”
+                        </h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-600">
+                            Caff Stack's efforts in addressing challenges and implementing effective solutions played a crucial role in the success of the project. The outcomes exceeded expectations and created strong business value.
+                        </p>
+
+                        <div class="mt-7 pt-5 border-t border-gray-200 flex items-center justify-between">
+
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">
+                                    Thien Duy Tran
+                                </p>
+
+                                <p class="mt-1 text-xs text-gray-500">
+                                    Product Manager, T-Rize Group
+                                </p>
+                            </div>
+
+                            <div class="w-11 h-11 rounded-full border-2 border-yellow-400 overflow-hidden">
+                                <img src="https://plavno.io/media/img/main-page/thien-duy-tran-photo.webp"
+                                    alt="Thien Duy Tran"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Card 3 -->
+                    <article class="testimonial-card shrink-0 w-full md:w-[calc((100%-40px)/3)] rounded-[22px] border border-gray-200 bg-white p-6 shadow-lg hover:border-yellow-400 hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-start justify-between">
+                            <span class="text-yellow-500">★★★★★</span>
+                            <span class="text-xs text-gray-400">03</span>
+                        </div>
+
+                        <h3 class="mt-5 text-lg font-bold leading-7 text-gray-900">
+                            “We are very satisfied with their excellent work.”
+                        </h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-600">
+                            Through the partnership with Caff Stack, we built a reliable system with excellent communication, quick responses, and strong overall results.
+                        </p>
+
+                        <div class="mt-7 pt-5 border-t border-gray-200 flex items-center justify-between">
+
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">
+                                    Michael Bychenok
+                                </p>
+
+                                <p class="mt-1 text-xs text-gray-500">
+                                    CEO, MediaCube
+                                </p>
+                            </div>
+
+                            <div class="w-11 h-11 rounded-full border-2 border-yellow-400 overflow-hidden">
+                                <img src="https://plavno.io/media/img/main-page/michael-bychenok-photo.webp"
+                                    alt="Michael Bychenok"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Card 4 -->
+                    <article class="testimonial-card shrink-0 w-full md:w-[calc((100%-40px)/3)] rounded-[22px] border border-gray-200 bg-white p-6 shadow-lg hover:border-yellow-400 hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-start justify-between">
+                            <span class="text-yellow-500">★★★★★</span>
+                            <span class="text-xs text-gray-400">04</span>
+                        </div>
+
+                        <h3 class="mt-5 text-lg font-bold leading-7 text-gray-900">
+                            “They have a clear understanding of what the end user needs.”
+                        </h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-600">
+                            Caff Stack's designs are user-friendly, deadlines are respected, and the team adapts easily to existing workflows while maintaining professionalism.
+                        </p>
+
+                        <div class="mt-7 pt-5 border-t border-gray-200 flex items-center justify-between">
+
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">
+                                    Helen Lonskaya
+                                </p>
+
+                                <p class="mt-1 text-xs text-gray-500">
+                                    Head of Growth, Codabrasoft LLC
+                                </p>
+                            </div>
+
+                            <div class="w-11 h-11 rounded-full border-2 border-yellow-400 overflow-hidden">
+                                <img src="https://plavno.io/media/img/main-page/helen-lonskaya-photo.webp"
+                                    alt="Helen Lonskaya"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Card 5 -->
+                    <article class="testimonial-card shrink-0 w-full md:w-[calc((100%-40px)/3)] rounded-[22px] border border-gray-200 bg-white p-6 shadow-lg hover:border-yellow-400 hover:-translate-y-1 transition duration-300">
+
+                        <div class="flex items-start justify-between">
+                            <span class="text-yellow-500">★★★★★</span>
+                            <span class="text-xs text-gray-400">05</span>
+                        </div>
+
+                        <h3 class="mt-5 text-lg font-bold leading-7 text-gray-900">
+                            “The app was delivered on time without any serious issues.”
+                        </h3>
+
+                        <p class="mt-3 text-sm leading-6 text-gray-600">
+                            The MVP delivered by Caff Stack provided the required functionality, regular updates, fast problem-solving, and a successful overall execution.
+                        </p>
+
+                        <div class="mt-7 pt-5 border-t border-gray-200 flex items-center justify-between">
+
+                            <div>
+                                <p class="text-sm font-semibold text-gray-900">
+                                    Mitya Smusin
+                                </p>
+
+                                <p class="mt-1 text-xs text-gray-500">
+                                    Founder, 24hour.dev
+                                </p>
+                            </div>
+
+                            <div class="w-11 h-11 rounded-full border-2 border-yellow-400 overflow-hidden">
+                                <img src="https://plavno.io/media/img/main-page/mitya-smusin-photo.webp"
+                                    alt="Mitya Smusin"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dots -->
+            <div class="mt-8 flex justify-center gap-2">
+
+                <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-black"></button>
+                <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300"></button>
+                <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-gray-300"></button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ============================================================ -->
+<!--  PROJECT ESTIMATOR SECTION                               -->
+<!-- ============================================================ -->
+<section class="estimator-section relative overflow-hidden px-6 py-20 md:py-24">
+
+    <!-- Subtle glow accents -->
+    <div class="pointer-events-none absolute -top-36 -right-24 w-[520px] h-[520px] rounded-full bg-yellow-400/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-40 left-[28%] w-[420px] h-[420px] rounded-full bg-amber-200/5 blur-3xl"></div>
+    <div class="pointer-events-none absolute top-1/2 -right-12 w-44 h-44 rounded-full border border-yellow-400/10"></div>
+
+    <div class="max-w-[1150px] mx-auto relative z-10">
+        <div class="estimator-shell rounded-[30px] border border-white/10 overflow-hidden">
+            <div class="grid lg:grid-cols-[1.25fr_.75fr] items-center">
+
+                <!-- Left content -->
+                <div class="p-8 md:p-12 lg:p-14">
+
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-400/25 bg-yellow-400/10 text-xs font-semibold tracking-wide text-yellow-300">
+                        <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                        Project Estimator
+                    </div>
+
+                    <h2 class="mt-6 max-w-3xl text-4xl md:text-5xl lg:text-[56px] leading-[1.04] font-bold tracking-tight text-white">
+                        Answer several questions and
+                        <span class="text-yellow-400"> get a free estimate</span>
+                    </h2>
+
+                    <!-- Benefits -->
+                    <div class="mt-8 grid sm:grid-cols-3 gap-5 max-w-3xl">
+
+                        <div class="flex items-start gap-3">
+                            <span class="mt-0.5 w-5 h-5 shrink-0 rounded-full border border-yellow-400/70 text-yellow-400 flex items-center justify-center text-xs">✓</span>
+                            <p class="text-sm leading-5 text-gray-300">
+                                <span class="font-semibold text-white">The estimated time</span> to launch the product
+                            </p>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="mt-0.5 w-5 h-5 shrink-0 rounded-full border border-yellow-400/70 text-yellow-400 flex items-center justify-center text-xs">✓</span>
+                            <p class="text-sm leading-5 text-gray-300">
+                                <span class="font-semibold text-white">Clear vision</span> of functionality you need
+                            </p>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <span class="mt-0.5 w-5 h-5 shrink-0 rounded-full border border-yellow-400/70 text-yellow-400 flex items-center justify-center text-xs">✓</span>
+                            <p class="text-sm leading-5 text-gray-300">
+                                <span class="font-semibold text-white">15% discount</span> on your first sprint
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <a href="#" class="estimator-btn inline-flex items-center gap-3 mt-9 px-6 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-black font-semibold transition duration-200">
+                        Get AI Estimate
+                        <span class="text-lg">→</span>
+                    </a>
+
+                </div>
+
+                <!-- Right decorative panel -->
+                <div class="estimator-art relative min-h-[320px] lg:min-h-[430px] flex items-center justify-center overflow-hidden">
+
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_55%_48%,rgba(250,204,21,.17),transparent_36%)]"></div>
+
+                    <!-- Decorative Caff Stack inspired mark -->
+                    <div class="relative w-72 h-72 md:w-80 md:h-80">
+                        <div class="absolute inset-10 rounded-full border-[18px] border-yellow-400/70 border-t-transparent rotate-[24deg]"></div>
+                        <div class="absolute inset-16 rounded-full border-[16px] border-white/80 border-b-transparent -rotate-[28deg]"></div>
+                        <div class="absolute inset-[88px] rounded-full bg-yellow-400/90 shadow-[0_0_70px_rgba(250,204,21,.25)]"></div>
+                        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-black font-black text-4xl tracking-tight">
+                            CS
+                        </div>
+
+                        <div class="absolute top-8 right-8 w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="absolute bottom-12 left-8 w-2.5 h-2.5 rounded-full bg-white/80"></div>
+                    </div>
+
+                    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full border border-white/10 bg-black/30 backdrop-blur-sm text-xs text-gray-400">
+                        Built by Caff Stack
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================================================ -->
+<!--  CAFF STACK - AI SOLUTIONS STACKED SCROLL                   -->
+<!-- ============================================================ -->
+
+<section id="ai-solutions-stack"
+    class="relative isolate overflow-visible bg-black px-4 py-24 sm:px-6 md:py-32">
+
+    <!-- Background glow -->
+    <div class="pointer-events-none absolute left-1/2 top-0
+                -translate-x-1/2
+                w-[700px] h-[400px]
+                rounded-full
+                bg-yellow-400/10
+                blur-[130px]">
+    </div>
+
+
+    <div class="relative z-10 max-w-[1150px] mx-auto">
+
+        <!-- ==================================================== -->
+        <!-- HEADING                                              -->
+        <!-- ==================================================== -->
+
+        <div class="max-w-4xl mx-auto text-center mb-20">
+
+            <div class="inline-flex items-center gap-2
+                        px-4 py-2
+                        rounded-full
+                        border border-yellow-400/25
+                        bg-yellow-400/10
+                        text-xs font-semibold
+                        uppercase tracking-[0.18em]
+                        text-yellow-400">
+
+                <span class="w-2 h-2 rounded-full
+                             bg-yellow-400 animate-pulse">
+                </span>
+
+                Services &amp; Solutions
+
+            </div>
+
+
+            <h2 class="mt-6
+                       text-4xl md:text-5xl lg:text-[58px]
+                       leading-[1.05]
+                       font-bold
+                       tracking-tight
+                       text-white">
+
+                <span class="text-yellow-400">
+                    Comprehensive AI Solutions
+                </span>
+
+                That
+
+                <br class="hidden md:block">
+
+                Accelerate Your Business
+
+            </h2>
+
+
+            <p class="mt-5 max-w-2xl mx-auto
+                      text-base md:text-lg
+                      leading-7
+                      text-gray-400">
+
+                Build smarter products with AI-powered automation,
+                intelligent integrations, custom applications,
+                and next-generation interfaces.
+
+            </p>
+
+        </div>
+
+
+        <!-- ==================================================== -->
+        <!-- STACK                                                -->
+        <!-- ==================================================== -->
+
+        <div class="relative">
+
+
+            <!-- ================================================== -->
+            <!-- CARD 1                                             -->
+            <!-- ================================================== -->
+
+            <article
+                class="ai-stack-card sticky top-24 z-10 mb-[35vh]">
+
+                <div class="relative overflow-hidden
+                            rounded-[28px]
+                            border border-yellow-400/20
+                            bg-[#101010]
+                            shadow-[0_30px_100px_rgba(0,0,0,0.7)]">
+
+                    <div class="grid lg:grid-cols-2">
+
+
+                        <!-- IMAGE -->
+
+                        <div class="p-5 md:p-7 lg:p-8">
+
+                            <div class="relative overflow-hidden
+                                        rounded-[22px]
+                                        border border-yellow-400/15
+                                        bg-[#171717]">
+
+                                <div class="absolute inset-0
+                                            bg-yellow-400/5
+                                            pointer-events-none">
+                                </div>
+
+                                <img
+                                    src="https://plavno.io/media/img/main-page/ai-integrations-business-automation.jpg"
+                                    alt="AI Integrations and Business Process Automation"
+                                    class="relative z-10
+                                           w-full
+                                           h-[330px]
+                                           md:h-[430px]
+                                           object-cover
+                                           rounded-[18px]
+                                           transition duration-700
+                                           hover:scale-[1.025]"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONTENT -->
+
+                        <div class="flex flex-col
+                                    justify-center
+                                    px-7 pb-9
+                                    md:px-10 md:pb-10
+                                    lg:px-12 lg:py-12">
+
+                            <div class="w-12 h-12
+                                        mb-6
+                                        rounded-xl
+                                        flex items-center justify-center
+                                        border border-yellow-400/25
+                                        bg-yellow-400/10
+                                        text-yellow-400">
+
+                                <svg class="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24">
+
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.8"
+                                        d="M8 12h8M12 8v8M4 6h16M4 18h16">
+                                    </path>
+
+                                </svg>
+
+                            </div>
+
+
+                            <h3 class="text-3xl md:text-4xl
+                                       font-bold
+                                       leading-tight
+                                       tracking-tight
+                                       text-white">
+
+                                AI Integrations &amp;
+
+                                <span class="text-yellow-400">
+                                    Business Process Automation
+                                </span>
+
+                            </h3>
+
+
+                            <p class="mt-6
+                                      text-sm md:text-base
+                                      leading-7
+                                      text-gray-400">
+
+                                Streamline complex business processes through
+                                real-time, event-driven AI integrations.
+                                Our engineering expertise encompasses Apache
+                                Kafka, Airflow, AWS Step Functions, and
+                                advanced microservices architecture.
+
+                            </p>
+
+
+                            <p class="mt-4
+                                      text-sm md:text-base
+                                      leading-7
+                                      font-semibold
+                                      text-gray-200">
+
+                                Automate workflows, increase business efficiency
+                                by up to 60%, and eliminate manual tasks through
+                                intelligent process automation.
+
+                            </p>
+
+
+                            <div class="mt-7 flex flex-wrap gap-2">
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    AI Integration
+                                </span>
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    Automation
+                                </span>
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    Microservices
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ================================================== -->
+            <!-- CARD 2                                             -->
+            <!-- ================================================== -->
+
+            <article
+                class="ai-stack-card sticky top-24 z-20 mb-[35vh]">
+
+                <div class="relative overflow-hidden
+                            rounded-[28px]
+                            border border-yellow-400/20
+                            bg-[#101010]
+                            shadow-[0_30px_100px_rgba(0,0,0,0.7)]">
+
+                    <div class="grid lg:grid-cols-2">
+
+
+                        <!-- CONTENT -->
+
+                        <div class="order-2 lg:order-1
+                                    flex flex-col justify-center
+                                    px-7 py-9
+                                    md:px-10 md:py-10
+                                    lg:px-12 lg:py-12">
+
+                            <div class="w-12 h-12
+                                        mb-6
+                                        rounded-xl
+                                        flex items-center justify-center
+                                        border border-yellow-400/25
+                                        bg-yellow-400/10
+                                        text-yellow-400">
+
+                                <svg class="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24">
+
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.8"
+                                        d="M5 4h14v16H5zM8 8h8M8 12h5M8 16h3">
+                                    </path>
+
+                                </svg>
+
+                            </div>
+
+
+                            <h3 class="text-3xl md:text-4xl
+                                       font-bold
+                                       leading-tight
+                                       tracking-tight
+                                       text-white">
+
+                                Custom AI Application
+
+                                <span class="text-yellow-400">
+                                    &amp; Service Development
+                                </span>
+
+                            </h3>
+
+
+                            <p class="mt-6
+                                      text-sm md:text-base
+                                      leading-7
+                                      text-gray-400">
+
+                                We build scalable and secure AI-driven
+                                applications tailored specifically to your
+                                business requirements. Our stack includes
+                                Kubernetes, Docker, Python, FastAPI, PyTorch,
+                                TensorFlow, Node.js, React, and cloud-native
+                                deployments.
+
+                            </p>
+
+
+                            <p class="mt-4
+                                      text-sm md:text-base
+                                      leading-7
+                                      font-semibold
+                                      text-gray-200">
+
+                                Deliver customized AI services faster,
+                                reducing time-to-market by 40%.
+
+                            </p>
+
+
+                            <div class="mt-7 flex flex-wrap gap-2">
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    Python
+                                </span>
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    FastAPI
+                                </span>
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    React
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- IMAGE -->
+
+                        <div class="order-1 lg:order-2 p-5 md:p-7 lg:p-8">
+
+                            <div class="relative overflow-hidden
+                                        rounded-[22px]
+                                        border border-yellow-400/15
+                                        bg-[#171717]">
+
+                                <img
+                                    src="https://plavno.io/media/img/main-page/custom-ai-application-development.jpg"
+                                    alt="Custom AI Application Development"
+                                    class="w-full
+                                           h-[330px]
+                                           md:h-[430px]
+                                           object-cover
+                                           rounded-[18px]
+                                           transition duration-700
+                                           hover:scale-[1.025]"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ================================================== -->
+            <!-- CARD 3                                             -->
+            <!-- ================================================== -->
+
+            <article
+                class="ai-stack-card sticky top-24 z-30 mb-[35vh]">
+
+                <div class="relative overflow-hidden
+                            rounded-[28px]
+                            border border-yellow-400/20
+                            bg-[#101010]
+                            shadow-[0_30px_100px_rgba(0,0,0,0.7)]">
+
+                    <div class="grid lg:grid-cols-2">
+
+
+                        <!-- IMAGE -->
+
+                        <div class="p-5 md:p-7 lg:p-8">
+
+                            <div class="relative overflow-hidden
+                                        rounded-[22px]
+                                        border border-yellow-400/15
+                                        bg-[#171717]">
+
+                                <img
+                                    src="https://plavno.io/media/img/main-page/generative-ai-llm-integration.jpg"
+                                    alt="Generative AI and LLM Integration"
+                                    class="w-full
+                                           h-[330px]
+                                           md:h-[430px]
+                                           object-cover
+                                           rounded-[18px]
+                                           transition duration-700
+                                           hover:scale-[1.025]"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONTENT -->
+
+                        <div class="flex flex-col
+                                    justify-center
+                                    px-7 pb-9
+                                    md:px-10 md:pb-10
+                                    lg:px-12 lg:py-12">
+
+                            <div class="w-12 h-12
+                                        mb-6
+                                        rounded-xl
+                                        flex items-center justify-center
+                                        border border-yellow-400/25
+                                        bg-yellow-400/10
+                                        text-yellow-400">
+
+                                <span class="text-2xl">✦</span>
+
+                            </div>
+
+
+                            <h3 class="text-3xl md:text-4xl
+                                       font-bold
+                                       leading-tight
+                                       tracking-tight
+                                       text-white">
+
+                                Generative AI
+
+                                <span class="text-yellow-400">
+                                    &amp; LLM Integration
+                                </span>
+
+                            </h3>
+
+
+                            <p class="mt-6
+                                      text-sm md:text-base
+                                      leading-7
+                                      text-gray-400">
+
+                                Integrate cutting-edge generative AI and LLM
+                                solutions into your workflow. Automate content
+                                creation, data extraction, and knowledge
+                                management processes while improving
+                                operational efficiency.
+
+                            </p>
+
+
+                            <p class="mt-4
+                                      text-sm md:text-base
+                                      leading-7
+                                      font-semibold
+                                      text-gray-200">
+
+                                Our expertise includes fine-tuning, RLHF,
+                                and implementing Retrieval-Augmented
+                                Generation (RAG).
+
+                            </p>
+
+
+                            <div class="mt-7 flex flex-wrap gap-2">
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    LLM
+                                </span>
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    RAG
+                                </span>
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    Fine-tuning
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ================================================== -->
+            <!-- CARD 4                                             -->
+            <!-- ================================================== -->
+
+            <article
+                class="ai-stack-card sticky top-24 z-40 mb-[20vh]">
+
+                <div class="relative overflow-hidden
+                            rounded-[28px]
+                            border border-yellow-400/20
+                            bg-[#101010]
+                            shadow-[0_30px_100px_rgba(0,0,0,0.7)]">
+
+                    <div class="grid lg:grid-cols-2">
+
+
+                        <!-- CONTENT -->
+
+                        <div class="order-2 lg:order-1
+                                    flex flex-col justify-center
+                                    px-7 py-9
+                                    md:px-10 md:py-10
+                                    lg:px-12 lg:py-12">
+
+                            <div class="w-12 h-12
+                                        mb-6
+                                        rounded-xl
+                                        flex items-center justify-center
+                                        border border-yellow-400/25
+                                        bg-yellow-400/10
+                                        text-yellow-400">
+
+                                <svg class="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24">
+
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.8"
+                                        d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z">
+                                    </path>
+
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="1.8"
+                                        d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8">
+                                    </path>
+
+                                </svg>
+
+                            </div>
+
+
+                            <h3 class="text-3xl md:text-4xl
+                                       font-bold
+                                       leading-tight
+                                       tracking-tight
+                                       text-white">
+
+                                Voice and
+
+                                <span class="text-yellow-400">
+                                    Multimodal Interfaces
+                                </span>
+
+                            </h3>
+
+
+                            <p class="mt-6
+                                      text-sm md:text-base
+                                      leading-7
+                                      text-gray-400">
+
+                                Deploy powerful multimodal AI interfaces
+                                using advanced speech recognition,
+                                text-to-speech, natural language processing,
+                                and computer vision technologies.
+
+                            </p>
+
+
+                            <p class="mt-4
+                                      text-sm md:text-base
+                                      leading-7
+                                      font-semibold
+                                      text-gray-200">
+
+                                Improve customer engagement by up to 70%
+                                by offering seamless and intuitive
+                                interactions across voice, text,
+                                and visual channels.
+
+                            </p>
+
+
+                            <div class="mt-7 flex flex-wrap gap-2">
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    Voice AI
+                                </span>
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    NLP
+                                </span>
+
+                                <span class="px-3 py-2 rounded-full
+                                             border border-yellow-400/15
+                                             bg-yellow-400/5
+                                             text-xs text-gray-400">
+                                    Computer Vision
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- IMAGE -->
+
+                        <div class="order-1 lg:order-2 p-5 md:p-7 lg:p-8">
+
+                            <div class="relative overflow-hidden
+                                        rounded-[22px]
+                                        border border-yellow-400/15
+                                        bg-[#171717]">
+
+                                <img
+                                    src="https://plavno.io/media/img/main-page/ai-voice-multimodal-interfaces.jpg"
+                                    alt="AI Voice and Multimodal Interfaces"
+                                    class="w-full
+                                           h-[330px]
+                                           md:h-[430px]
+                                           object-cover
+                                           rounded-[18px]
+                                           transition duration-700
+                                           hover:scale-[1.025]"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ============================================================
+     REAL-TIME MULTILINGUAL VOICE TRANSLATION
+============================================================= -->
+
+  <section
+    id="voice-translation"
+    class="relative overflow-hidden bg-black
+           px-5 pt-2 pb-24
+           sm:px-8 sm:pt-3 sm:pb-24
+           md:pt-4 md:pb-32
+           lg:px-10">
+    <!-- Background glow -->
+    <div
+        class="pointer-events-none absolute
+               -left-40 top-20
+               h-[420px] w-[420px]
+               rounded-full
+               bg-yellow-400/10
+               blur-[130px]">
+    </div>
+
+    <div
+        class="pointer-events-none absolute
+               -right-40 bottom-0
+               h-[500px] w-[500px]
+               rounded-full
+               bg-yellow-400/5
+               blur-[150px]">
+    </div>
+
+
+    <div class="relative z-10 mx-auto max-w-[1120px]">
+
+
+        <!-- ====================================================
+             TOP CONTENT
+        ===================================================== -->
+
+        <div
+            class="grid items-center gap-12
+                   lg:grid-cols-[0.95fr_1.05fr]
+                   lg:gap-16">
+
+            <!-- LEFT SIDE -->
+
+            <div>
+
+                <!-- Badge -->
+
+                <div
+                    class="mb-6 inline-flex items-center gap-2
+                           rounded-full
+                           border border-yellow-400/20
+                           bg-yellow-400/10
+                           px-4 py-2
+                           text-[11px] font-semibold
+                           uppercase tracking-[0.16em]
+                           text-yellow-400">
+
+                    <span
+                        class="h-2 w-2 rounded-full
+                               bg-yellow-400
+                               shadow-[0_0_12px_rgba(250,204,21,0.8)]
+                               animate-pulse">
+                    </span>
+
+                    Real-time Multilingual Voice Translation
+
+                </div>
+
+
+                <!-- Heading -->
+
+                <h2
+                    class="max-w-[650px]
+                           text-4xl font-bold
+                           leading-[1.08]
+                           tracking-tight
+                           text-white
+                           sm:text-5xl
+                           lg:text-[54px]">
+
+                    Enhance communication with
+
+                    <span class="text-yellow-400">
+                        speedy, real-time voice translation
+                    </span>
+
+                    solutions
+
+                </h2>
+
+
+                <!-- Description -->
+
+                <p
+                    class="mt-7 max-w-[590px]
+                           text-sm leading-7
+                           text-gray-400
+                           sm:text-base">
+
+                    Ultra-fast, real-time voice translation solutions
+                    designed to break language barriers and make
+                    conversations feel natural across borders.
+
+                </p>
+
+
+                <p
+                    class="mt-4 max-w-[590px]
+                           text-sm leading-7
+                           text-gray-400
+                           sm:text-base">
+
+                    Our sophisticated pipeline combines advanced speech
+                    recognition with highly scalable AI infrastructure
+                    and realistic text-to-speech synthesis for
+                    near-instant multilingual communication.
+
+                </p>
+
+
+                <!-- Highlight -->
+
+                <div
+                    class="mt-7 flex items-start gap-4
+                           rounded-2xl
+                           border border-yellow-400/15
+                           bg-white/[0.025]
+                           p-5">
+
+                    <div
+                        class="flex h-10 w-10 shrink-0
+                               items-center justify-center
+                               rounded-xl
+                               bg-yellow-400/10
+                               text-yellow-400">
+
+                        <svg
+                            class="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5">
+                            </path>
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+
+                        <p
+                            class="text-sm font-semibold
+                                   text-white">
+
+                            Natural conversations.
+                            Near-zero latency.
+
+                        </p>
+
+                        <p
+                            class="mt-1 text-xs
+                                   leading-5 text-gray-500">
+
+                            Built for meetings, remote teams,
+                            customer conversations and global events.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Tech pills -->
+
+                <div
+                    class="mt-7 flex flex-wrap gap-2">
+
+                    <span
+                        class="rounded-full
+                               border border-yellow-400/15
+                               bg-yellow-400/5
+                               px-3 py-2
+                               text-xs text-gray-400">
+
+                        OpenAI Whisper
+
+                    </span>
+
+                    <span
+                        class="rounded-full
+                               border border-yellow-400/15
+                               bg-yellow-400/5
+                               px-3 py-2
+                               text-xs text-gray-400">
+
+                        Cerebras
+
+                    </span>
+
+                    <span
+                        class="rounded-full
+                               border border-yellow-400/15
+                               bg-yellow-400/5
+                               px-3 py-2
+                               text-xs text-gray-400">
+
+                        Azure TTS
+
+                    </span>
+
+                    <span
+                        class="rounded-full
+                               border border-yellow-400/15
+                               bg-yellow-400/5
+                               px-3 py-2
+                               text-xs text-gray-400">
+
+                        ElevenLabs
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 RIGHT IMAGE
+            ================================================== -->
+
+            <div class="relative">
+
+                <!-- Glow behind image -->
+
+                <div
+                    class="absolute inset-10
+                           rounded-[40px]
+                           bg-yellow-400/10
+                           blur-[70px]">
+                </div>
+
+
+                <!-- Image container -->
+
+                <div
+                    class="relative overflow-hidden
+                           rounded-[28px]
+                           border border-yellow-400/20
+                           bg-[#111111]
+                           p-2
+                           shadow-[0_30px_100px_rgba(0,0,0,0.55)]">
+
+                    <div
+                        class="overflow-hidden
+                               rounded-[21px]
+                               border border-white/5
+                               bg-white">
+
+                        <img
+                            src="https://plavno.io/media/img/main-page/real-time-multilingual-voice-translation.jpg"
+                            alt="Real-time multilingual voice translation"
+                            class="block w-full
+                                   object-cover
+                                   transition duration-700
+                                   hover:scale-[1.025]"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Floating status -->
+
+                <div
+                    class="absolute
+                           -bottom-5 left-5
+                           flex items-center gap-3
+                           rounded-2xl
+                           border border-yellow-400/20
+                           bg-[#111111]/95
+                           px-4 py-3
+                           shadow-2xl
+                           backdrop-blur-xl
+                           sm:left-8">
+
+                    <span
+                        class="flex h-9 w-9
+                               items-center justify-center
+                               rounded-xl
+                               bg-yellow-400/10
+                               text-yellow-400">
+
+                        <svg
+                            class="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="M12 2a3 3 0 00-3 3v7a3 3 0 006 0V5a3 3 0 00-3-3z">
+                            </path>
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8">
+                            </path>
+
+                        </svg>
+
+                    </span>
+
+                    <div>
+
+                        <p
+                            class="text-xs font-semibold
+                                   text-white">
+
+                            Live Translation
+
+                        </p>
+
+                        <div
+                            class="mt-0.5 flex items-center gap-1.5">
+
+                            <span
+                                class="h-1.5 w-1.5
+                                       rounded-full
+                                       bg-green-400">
+                            </span>
+
+                            <span
+                                class="text-[10px]
+                                       text-gray-500">
+
+                                Active
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ====================================================
+             BOTTOM FEATURE CARDS
+        ===================================================== -->
+
+        <div
+            class="mt-24 grid gap-4
+                   md:grid-cols-3">
+
+
+            <!-- CARD 1 -->
+
+            <div
+                class="group rounded-[22px]
+                       border border-yellow-400/15
+                       bg-[#101010]
+                       p-6
+                       transition duration-300
+                       hover:-translate-y-1
+                       hover:border-yellow-400/30
+                       hover:bg-[#141414]">
+
+                <div
+                    class="flex items-start
+                           justify-between">
+
+                    <div
+                        class="flex h-11 w-11
+                               items-center justify-center
+                               rounded-xl
+                               bg-yellow-400/10
+                               text-yellow-400">
+
+                        <svg
+                            class="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="M4 6h16M4 12h16M4 18h10">
+                            </path>
+
+                        </svg>
+
+                    </div>
+
+                    <span
+                        class="text-xs font-medium
+                               text-yellow-400/70">
+
+                        01
+
+                    </span>
+
+                </div>
+
+
+                <h3
+                    class="mt-6 text-lg
+                           font-bold text-white">
+
+                    Instantaneous Translation
+
+                </h3>
+
+
+                <p
+                    class="mt-2 text-sm
+                           leading-6 text-gray-500">
+
+                    Translate spoken conversations across
+                    <span class="font-semibold text-gray-300">
+                        47+ languages
+                    </span>
+                    with minimal delay.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div
+                class="group rounded-[22px]
+                       border border-yellow-400/15
+                       bg-[#101010]
+                       p-6
+                       transition duration-300
+                       hover:-translate-y-1
+                       hover:border-yellow-400/30
+                       hover:bg-[#141414]">
+
+                <div
+                    class="flex items-start
+                           justify-between">
+
+                    <div
+                        class="flex h-11 w-11
+                               items-center justify-center
+                               rounded-xl
+                               bg-yellow-400/10
+                               text-yellow-400">
+
+                        <svg
+                            class="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="M6 8a6 6 0 0112 0v3a6 6 0 01-12 0V8z">
+                            </path>
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="M3 11h2M19 11h2M12 3v2">
+                            </path>
+
+                        </svg>
+
+                    </div>
+
+                    <span
+                        class="text-xs font-medium
+                               text-yellow-400/70">
+
+                        02
+
+                    </span>
+
+                </div>
+
+
+                <h3
+                    class="mt-6 text-lg
+                           font-bold text-white">
+
+                    Ultra-Low Latency
+
+                </h3>
+
+
+                <p
+                    class="mt-2 text-sm
+                           leading-6 text-gray-500">
+
+                    Designed for live meetings, remote teams,
+                    presentations and global events where
+                    every second matters.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div
+                class="group rounded-[22px]
+                       border border-yellow-400/15
+                       bg-[#101010]
+                       p-6
+                       transition duration-300
+                       hover:-translate-y-1
+                       hover:border-yellow-400/30
+                       hover:bg-[#141414]">
+
+                <div
+                    class="flex items-start
+                           justify-between">
+
+                    <div
+                        class="flex h-11 w-11
+                               items-center justify-center
+                               rounded-xl
+                               bg-yellow-400/10
+                               text-yellow-400">
+
+                        <svg
+                            class="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="1.8"
+                                d="M4 19V5M4 19h16M8 16v-4M12 16V8M16 16V6">
+                            </path>
+
+                        </svg>
+
+                    </div>
+
+                    <span
+                        class="text-xs font-medium
+                               text-yellow-400/70">
+
+                        03
+
+                    </span>
+
+                </div>
+
+
+                <h3
+                    class="mt-6 text-lg
+                           font-bold text-white">
+
+                    Scalable Architecture
+
+                </h3>
+
+
+                <p
+                    class="mt-2 text-sm
+                           leading-6 text-gray-500">
+
+                    Built to support simultaneous usage by
+                    thousands of concurrent users while
+                    maintaining a smooth experience.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ====================================================
+             BOTTOM CTA / STATEMENT
+        ===================================================== -->
+
+        <div
+            class="mt-16
+                   flex flex-col items-center
+                   justify-between gap-5
+                   rounded-[24px]
+                   border border-yellow-400/10
+                   bg-white/[0.02]
+                   px-6 py-6
+                   text-center
+                   sm:flex-row
+                   sm:text-left
+                   md:px-8">
+
+            <div>
+
+                <p
+                    class="text-sm font-semibold
+                           text-white">
+
+                    One conversation.
+                    Multiple languages.
+                    Zero friction.
+
+                </p>
+
+                <p
+                    class="mt-1 text-xs
+                           text-gray-500">
+
+                    Real-time AI communication for a connected world.
+
+                </p>
+
+            </div>
+
+
+            <div
+                class="flex items-center gap-2
+                       text-xs font-semibold
+                       text-yellow-400">
+
+                <span
+                    class="h-2 w-2 rounded-full
+                           bg-yellow-400
+                           animate-pulse">
+                </span>
+
+                AI-powered communication
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ============================================================
+     CAFF STACK - AI INDUSTRIES SECTION
+     Theme: Black + White + Yellow
+============================================================= -->
+
+<section
+    id="ai-industries"
+    class="relative overflow-hidden bg-black
+           px-5 py-16
+           sm:px-8
+           md:py-20
+           lg:px-10">
+
+    <!-- ========================================================
+         SUBTLE BACKGROUND GLOW
+    ========================================================= -->
+
+    <div
+        class="pointer-events-none
+               absolute -top-40 left-1/3
+               h-[420px] w-[420px]
+               rounded-full
+               bg-yellow-400/5
+               blur-[130px]">
+    </div>
+
+    <div
+        class="pointer-events-none
+               absolute -bottom-40 right-0
+               h-[420px] w-[420px]
+               rounded-full
+               bg-yellow-300/5
+               blur-[130px]">
+    </div>
+
+
+    <!-- ========================================================
+         MAIN CONTAINER
+    ========================================================= -->
+
+    <div
+        class="relative z-10
+               mx-auto max-w-[1150px]">
+
+
+        <!-- ====================================================
+             HEADER
+        ===================================================== -->
+
+        <div class="max-w-3xl">
+
+
+            <!-- Badge -->
+
+            <div
+                class="inline-flex
+                       items-center
+                       gap-2
+                       rounded-full
+                       border border-yellow-400/30
+                       bg-yellow-400/5
+                       px-3 py-1
+                       text-[10px]
+                       font-medium
+                       text-yellow-400">
+
+                <span
+                    class="h-1.5 w-1.5
+                           rounded-full
+                           bg-yellow-400
+                           shadow-[0_0_10px_rgba(250,204,21,0.7)]">
+                </span>
+
+                AI Teams
+
+            </div>
+
+
+            <!-- Main Heading -->
+
+            <h2
+                class="mt-5
+                       text-4xl
+                       font-bold
+                       leading-[1.08]
+                       tracking-tight
+                       text-white
+                       sm:text-5xl
+                       md:text-[52px]">
+
+                AI Solutions for the world's
+
+                <br>
+
+                most
+                <span class="text-yellow-400">
+
+                    complex industries
+
+                </span>
+
+            </h2>
+
+
+            <!-- Description -->
+
+            <p
+                class="mt-5
+                       max-w-[650px]
+                       text-sm
+                       leading-6
+                       text-gray-400
+                       md:text-base">
+
+                Explore how we help leading brands digitally
+                transform their products and delight their
+                customers.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ====================================================
+             MAIN INDUSTRY AREA
+        ===================================================== -->
+
+        <div
+            class="mt-10
+                   grid
+                   gap-5
+                   lg:grid-cols-[190px_minmax(0,1fr)_230px]
+                   lg:items-start">
+
+
+            <!-- ==================================================
+                 LEFT INDUSTRY NAVIGATION
+            =================================================== -->
+
+            <div
+                class="relative
+                       h-[300px]
+                       overflow-hidden
+                       lg:h-[350px]">
+
+
+                <!-- Left vertical line -->
+
+                <div
+                    class="absolute
+                           left-0
+                           top-0
+                           bottom-0
+                           w-px
+                           bg-gray-800">
+                </div>
+
+
+                <!-- Yellow active line -->
+
+                <div
+                    class="absolute
+                           left-0
+                           top-0
+                           bottom-0
+                           w-px
+                           bg-yellow-400/20">
+                </div>
+
+
+                <!-- Scroll indicator -->
+
+                <div
+                    class="absolute
+                           right-0
+                           top-0
+                           bottom-0
+                           flex
+                           w-2
+                           justify-center">
+
+                    <div
+                        class="relative
+                               h-full
+                               w-1
+                               rounded-full
+                               bg-gray-800">
+
+                        <div
+                            id="industry-scroll-indicator"
+                            class="absolute
+                                   left-0
+                                   top-0
+                                   w-1
+                                   rounded-full
+                                   bg-yellow-400
+                                   shadow-[0_0_8px_rgba(250,204,21,0.45)]
+                                   transition-all
+                                   duration-500"
+                            style="height:14%;">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Industry List -->
+
+                <div
+                    id="industry-list"
+                    class="h-full
+                           overflow-y-auto
+                           pr-5
+                           pl-5
+                           scroll-smooth
+                           [scrollbar-width:none]
+                           [-ms-overflow-style:none]">
+
+
+                    <!-- Industry 01 -->
+
+                    <button
+                        type="button"
+                        data-industry="0"
+                        class="industry-item
+                               group
+                               flex w-full
+                               items-center
+                               border-l-2
+                               border-transparent
+                               py-3
+                               pl-4
+                               text-left
+                               text-[12px]
+                               font-medium
+                               text-gray-400
+                               transition-all
+                               duration-300
+                               hover:translate-x-1
+                               hover:border-yellow-400
+                               hover:text-yellow-400">
+
+                        Artificial Intelligence (AI)
+
+                    </button>
+
+
+                    <!-- Industry 02 -->
+
+                    <button
+                        type="button"
+                        data-industry="1"
+                        class="industry-item
+                               group
+                               flex w-full
+                               items-center
+                               border-l-2
+                               border-transparent
+                               py-3
+                               pl-4
+                               text-left
+                               text-[12px]
+                               font-medium
+                               text-gray-400
+                               transition-all
+                               duration-300
+                               hover:translate-x-1
+                               hover:border-yellow-400
+                               hover:text-yellow-400">
+
+                        Healthcare &amp; MedTech
+
+                    </button>
+
+
+                    <!-- Industry 03 -->
+
+                    <button
+                        type="button"
+                        data-industry="2"
+                        class="industry-item
+                               group
+                               flex w-full
+                               items-center
+                               border-l-2
+                               border-transparent
+                               py-3
+                               pl-4
+                               text-left
+                               text-[12px]
+                               font-medium
+                               text-gray-400
+                               transition-all
+                               duration-300
+                               hover:translate-x-1
+                               hover:border-yellow-400
+                               hover:text-yellow-400">
+
+                        Cybersecurity
+
+                    </button>
+
+
+                    <!-- Industry 04 -->
+
+                    <button
+                        type="button"
+                        data-industry="3"
+                        class="industry-item
+                               group
+                               flex w-full
+                               items-center
+                               border-l-2
+                               border-transparent
+                               py-3
+                               pl-4
+                               text-left
+                               text-[12px]
+                               font-medium
+                               text-gray-400
+                               transition-all
+                               duration-300
+                               hover:translate-x-1
+                               hover:border-yellow-400
+                               hover:text-yellow-400">
+
+                        LegalTech &amp; eDiscovery
+
+                    </button>
+
+
+                    <!-- Industry 05 -->
+
+                    <button
+                        type="button"
+                        data-industry="4"
+                        class="industry-item
+                               group
+                               flex w-full
+                               items-center
+                               border-l-2
+                               border-transparent
+                               py-3
+                               pl-4
+                               text-left
+                               text-[12px]
+                               font-medium
+                               text-gray-400
+                               transition-all
+                               duration-300
+                               hover:translate-x-1
+                               hover:border-yellow-400
+                               hover:text-yellow-400">
+
+                        GovTech &amp; Public Sector
+
+                    </button>
+
+
+                    <!-- Industry 06 -->
+
+                    <button
+                        type="button"
+                        data-industry="5"
+                        class="industry-item
+                               group
+                               flex w-full
+                               items-center
+                               border-l-2
+                               border-transparent
+                               py-3
+                               pl-4
+                               text-left
+                               text-[12px]
+                               font-medium
+                               text-gray-400
+                               transition-all
+                               duration-300
+                               hover:translate-x-1
+                               hover:border-yellow-400
+                               hover:text-yellow-400">
+
+                        SaaS
+
+                    </button>
+
+
+                    <!-- Industry 07 -->
+
+                    <button
+                        type="button"
+                        data-industry="6"
+                        class="industry-item
+                               group
+                               flex w-full
+                               items-center
+                               border-l-2
+                               border-transparent
+                               py-3
+                               pl-4
+                               text-left
+                               text-[12px]
+                               font-medium
+                               text-gray-400
+                               transition-all
+                               duration-300
+                               hover:translate-x-1
+                               hover:border-yellow-400
+                               hover:text-yellow-400">
+
+                        Retail &amp; eCommerce
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 CENTER CASE STUDY CARD
+            =================================================== -->
+
+            <div
+                id="industry-content"
+                class="min-w-0">
+
+
+                <div
+                    class="group
+                           overflow-hidden
+                           rounded-[22px]
+                           border
+                           border-gray-200
+                           bg-white
+                           shadow-[0_18px_55px_rgba(0,0,0,0.25)]
+                           transition-all
+                           duration-300
+                           hover:border-yellow-400/60
+                           hover:shadow-[0_20px_65px_rgba(250,204,21,0.08)]">
+
+
+                    <!-- Image -->
+
+                    <div
+                        class="relative
+                               h-[200px]
+                               overflow-hidden
+                               bg-gray-100
+                               sm:h-[235px]">
+
+
+                        <img
+                            id="industry-image"
+                            src="https://plavno.io/media/img/main-page/investment-tracking-analysis-app.webp"
+                            alt="AI industry case study"
+                            class="h-full
+                                   w-full
+                                   object-cover
+                                   transition-all
+                                   duration-700
+                                   group-hover:scale-[1.025]">
+
+
+                        <!-- Image Overlay -->
+
+                        <div
+                            class="pointer-events-none
+                                   absolute
+                                   inset-0
+                                   bg-gradient-to-t
+                                   from-black/25
+                                   via-transparent
+                                   to-transparent">
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Card Content -->
+
+                    <div class="p-6 sm:p-7">
+
+
+                        <div
+                            class="flex
+                                   items-start
+                                   justify-between
+                                   gap-4">
+
+
+                            <div>
+
+                                <!-- Category -->
+
+                                <p
+                                    id="industry-label"
+                                    class="text-[10px]
+                                           font-semibold
+                                           uppercase
+                                           tracking-[0.16em]
+                                           text-yellow-600">
+
+                                    Artificial Intelligence (AI)
+
+                                </p>
+
+
+                                <!-- Title -->
+
+                                <h3
+                                    id="industry-title"
+                                    class="mt-2
+                                           text-xl
+                                           font-bold
+                                           leading-tight
+                                           text-gray-950
+                                           sm:text-2xl">
+
+                                    Intelligent investment
+                                    tracking &amp; analysis
+
+                                </h3>
+
+                            </div>
+
+
+                            <!-- Counter -->
+
+                            <span
+                                id="industry-number"
+                                class="shrink-0
+                                       pt-1
+                                       text-xs
+                                       font-semibold
+                                       text-gray-300">
+
+                                01 / 07
+
+                            </span>
+
+                        </div>
+
+
+                        <!-- Description -->
+
+                        <p
+                            id="industry-description"
+                            class="mt-3
+                                   max-w-xl
+                                   text-xs
+                                   leading-6
+                                   text-gray-600
+                                   sm:text-sm">
+
+                            AI-powered platforms designed to simplify
+                            complex data, automate analysis and help
+                            businesses make faster decisions.
+
+                        </p>
+
+
+                        <!-- Case Study Link -->
+
+                        <button
+                            type="button"
+                            class="mt-5
+                                   inline-flex
+                                   items-center
+                                   gap-2
+                                   text-xs
+                                   font-semibold
+                                   text-gray-950
+                                   transition-colors
+                                   duration-300
+                                   hover:text-yellow-600">
+
+                            Read full Case Study
+
+                            <span
+                                class="text-base
+                                       transition-transform
+                                       duration-300
+                                       group-hover:translate-x-1">
+
+                                →
+
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 RIGHT TEAM PROFILE CARD
+            =================================================== -->
+
+            <div
+                class="relative
+                       overflow-hidden
+                       rounded-[22px]
+                       border
+                       border-yellow-400/30
+                       bg-[#141414]
+                       p-5
+                       shadow-[0_18px_50px_rgba(0,0,0,0.35)]
+                       transition-all
+                       duration-300
+                       hover:border-yellow-400/50
+                       sm:p-6">
+
+
+                <!-- Yellow glow -->
+
+                <div
+                    class="pointer-events-none
+                           absolute
+                           -right-12
+                           -top-12
+                           h-36
+                           w-36
+                           rounded-full
+                           bg-yellow-400/10
+                           blur-3xl">
+                </div>
+
+
+                <!-- Navigation Arrows -->
+
+                <div
+                    class="absolute
+                           right-4
+                           top-5
+                           z-10
+                           flex
+                           gap-2">
+
+
+                    <!-- Previous -->
+
+                    <button
+                        id="industry-prev"
+                        type="button"
+                        aria-label="Previous team member"
+                        class="flex
+                               h-8 w-8
+                               items-center
+                               justify-center
+                               rounded-full
+                               border
+                               border-gray-700
+                               bg-[#1d1d1d]
+                               text-gray-400
+                               shadow-sm
+                               transition-all
+                               duration-300
+                               hover:border-yellow-400
+                               hover:bg-yellow-400
+                               hover:text-black">
+
+                        ←
+
+                    </button>
+
+
+                    <!-- Next -->
+
+                    <button
+                        id="industry-next"
+                        type="button"
+                        aria-label="Next team member"
+                        class="flex
+                               h-8 w-8
+                               items-center
+                               justify-center
+                               rounded-full
+                               border
+                               border-gray-700
+                               bg-[#1d1d1d]
+                               text-gray-400
+                               shadow-sm
+                               transition-all
+                               duration-300
+                               hover:border-yellow-400
+                               hover:bg-yellow-400
+                               hover:text-black">
+
+                        →
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- Profile -->
+
+                <div class="relative pt-1">
+
+
+                    <!-- Profile Image -->
+
+                    <div
+                        class="h-12
+                               w-12
+                               overflow-hidden
+                               rounded-full
+                               border-2
+                               border-yellow-400
+                               bg-gray-800
+                               shadow-[0_0_18px_rgba(250,204,21,0.15)]">
+
+                        <img
+                            id="industry-person-image"
+                            src="https://plavno.io/media/img/new-main-page/team/Pavel.webp"
+                            alt="AI Team member"
+                            class="h-full
+                                   w-full
+                                   object-cover">
+
+                    </div>
+
+
+                    <!-- Name -->
+
+                    <h4
+                        id="industry-person-name"
+                        class="mt-4
+                               text-sm
+                               font-semibold
+                               text-white">
+
+                        Pavel
+
+                    </h4>
+
+
+                    <!-- Role -->
+
+                    <p
+                        id="industry-person-role"
+                        class="mt-1
+                               text-[11px]
+                               text-yellow-400">
+
+                        AI Team Lead
+
+                    </p>
+
+
+                    <!-- Description -->
+
+                    <p
+                        id="industry-person-description"
+                        class="mt-4
+                               text-[11px]
+                               leading-5
+                               text-gray-400">
+
+                        Builds scalable AI products focused on
+                        intelligent automation, modern interfaces
+                        and reliable real-time systems.
+
+                    </p>
+
+
+                    <!-- Skills -->
+
+                    <div
+                        id="industry-person-skills"
+                        class="mt-4
+                               flex
+                               flex-wrap
+                               gap-1.5">
+
+
+                        <span
+                            class="rounded-full
+                                   border
+                                   border-gray-700
+                                   bg-[#1d1d1d]
+                                   px-2.5
+                                   py-1
+                                   text-[10px]
+                                   text-gray-400">
+
+                            AI
+
+                        </span>
+
+
+                        <span
+                            class="rounded-full
+                                   border
+                                   border-gray-700
+                                   bg-[#1d1d1d]
+                                   px-2.5
+                                   py-1
+                                   text-[10px]
+                                   text-gray-400">
+
+                            React
+
+                        </span>
+
+
+                        <span
+                            class="rounded-full
+                                   border
+                                   border-gray-700
+                                   bg-[#1d1d1d]
+                                   px-2.5
+                                   py-1
+                                   text-[10px]
+                                   text-gray-400">
+
+                            Next.js
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================ -->
+<!--  STYLES              -->
+<!-- ============================================================ -->
+<style>
+    html { scroll-behavior: smooth; }
+
+    body {
+        background:
+            radial-gradient(circle at 50% -10%, rgba(250, 204, 21, 0.07), transparent 28%),
+            linear-gradient(180deg, #050505 0%, #090909 38%, #000000 100%);
+        color: #fff;
+    }
+
+    .nav-shell {
+        position: relative;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        background: linear-gradient(180deg, rgba(25,25,25,0.96), rgba(18,18,18,0.92));
+        box-shadow: 0 18px 50px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255,255,255,0.03);
+        transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .nav-shell:hover {
+        border-color: rgba(250,204,21,.28);
+        box-shadow: 0 22px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(250,204,21,.03);
+    }
+
+    .nav-shell > div {
+        min-width: 0;
+    }
+
+    .hero-section {
+        isolation: isolate;
+        min-height: 700px;
+    }
+
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        inset: 10% 16% auto;
+        height: 420px;
+        border-radius: 9999px;
+        background: radial-gradient(circle, rgba(250,204,21,.09), transparent 68%);
+        filter: blur(20px);
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .hero-section h1 {
+        text-shadow: 0 12px 40px rgba(0,0,0,.45);
+    }
+
+    .hero-section h1 .text-yellow-400 {
+        text-shadow: 0 0 32px rgba(250,204,21,.16);
+    }
+
+    .hero-section p {
+        max-width: 720px;
+    }
+
+    .hero-section a {
+        will-change: transform;
+    }
+
+    .hero-section a:hover {
+        transform: translateY(-2px);
+    }
+
+    .hero-section .bg-yellow-400 {
+        box-shadow: 0 12px 34px rgba(250,204,21,.18), inset 0 1px 0 rgba(255,255,255,.35);
+    }
+
+    .hero-section .bg-transparent {
+        background: rgba(255,255,255,.015);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 10px 28px rgba(0,0,0,.18);
+    }
+
+    .trust-row {
+        padding: 18px 24px;
+        border: 1px solid rgba(255,255,255,.07);
+        border-radius: 20px;
+        background: linear-gradient(180deg, rgba(20,20,20,.78), rgba(13,13,13,.64));
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.03), 0 18px 40px rgba(0,0,0,.22);
+        backdrop-filter: blur(10px);
+    }
+
+    .metrics-heading {
+        position: relative;
+        background:
+            radial-gradient(circle at 50% 0%, rgba(250,204,21,.045), transparent 32%),
+            #000;
+    }
+
+    .metrics-heading::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: min(860px, 80%);
+        height: 1px;
+        transform: translateX(-50%);
+        background: linear-gradient(90deg, transparent, rgba(250,204,21,.28), transparent);
+    }
+
+    .intro-copy {
+        padding-top: 12px;
+    }
+
+    .cases-section {
+        position: relative;
+        background:
+            linear-gradient(180deg, #000 0%, #030303 100%);
+    }
+
+    .cases-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(90deg, transparent 0%, rgba(250,204,21,.015) 50%, transparent 100%);
+    }
+
+    .carousel-shell {
+        position: relative;
+    }
+
+    .carousel-card > div {
+        position: relative;
+        background: linear-gradient(180deg, rgba(18,18,18,.98), rgba(10,10,10,.98));
+        box-shadow: 0 20px 45px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.025);
+        transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+    .carousel-card > div:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 28px 65px rgba(0,0,0,.34), 0 0 0 1px rgba(250,204,21,.04);
+    }
+
+    .carousel-card img {
+        transition: transform .45s ease, filter .45s ease;
+    }
+
+    .carousel-card > div:hover img {
+        transform: scale(1.035);
+        filter: saturate(1.04) contrast(1.02);
+    }
+
+    .carousel-card h3 {
+        text-underline-offset: 7px;
+    }
+
+    .carousel-card span {
+        transition: border-color .2s ease, background-color .2s ease, color .2s ease;
+    }
+
+    .carousel-card span:hover {
+        border-color: rgba(250,204,21,.28);
+        color: #fde68a;
+        background-color: rgba(250,204,21,.05);
+    }
+
+    #carouselPrev, #carouselNext {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background: rgba(20,20,20,.88);
+        box-shadow: 0 16px 34px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.03);
+    }
+
+    #carouselPrev:hover, #carouselNext:hover {
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 18px 38px rgba(0,0,0,.38), 0 0 22px rgba(250,204,21,.08);
+    }
+
+    .nav-item-link {
+        position: relative;
+    }
+
+    .nav-item-link::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: #facc15;
+        transform: scaleX(0);
+        transform-origin: right center;
+        transition: transform .4s ease;
+    }
+
+    .nav-item-link:hover::before {
+        transform: scaleX(1);
+        transform-origin: left center;
+    }
+
+    .nav-item-link:hover {
+        color: #facc15;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+
+    @keyframes float-slow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(12px); }
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-float-slow {
+        animation: float-slow 4s ease-in-out infinite;
+    }
+
+    @media (max-width: 1000px) {
+        .nav-shell {
+            gap: 16px;
+        }
+
+        .nav-shell nav, .nav-shell > nav {
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            min-height: 620px;
+        }
+
+        .trust-row {
+            gap: 18px;
+            padding: 16px;
+        }
+    }
+
+
+    .metrics-section {
+        background:
+            radial-gradient(circle at 18% 18%, rgba(250,204,21,.10), transparent 24%),
+            radial-gradient(circle at 82% 70%, rgba(250,204,21,.07), transparent 28%),
+            linear-gradient(180deg, #fffdf7 0%, #fff 100%);
+    }
+
+    .metrics-section::after {
+        content: '';
+        position: absolute;
+        inset: auto 0 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(0,0,0,.08), transparent);
+    }
+
+    .metric-card {
+        position: relative;
+        overflow: hidden;
+        transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+    .metric-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 72px;
+        height: 4px;
+        background: linear-gradient(90deg, #facc15, rgba(250,204,21,.12));
+        border-radius: 9999px;
+    }
+
+    .metric-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(250,204,21,.5);
+        box-shadow: 0 24px 60px rgba(0,0,0,.11);
+    }
+
+    .recognition-card {
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .recognition-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(250,204,21,.55);
+        box-shadow: 0 16px 32px rgba(0,0,0,.16);
+    }
+
+    @media (max-width: 768px) {
+        .metrics-section {
+            padding-top: 72px;
+            padding-bottom: 72px;
+        }
+    }
+
+
+    .testimonials-section {
+        background:
+            radial-gradient(circle at 50% 0%, rgba(250,204,21,.12), transparent 28%),
+            linear-gradient(180deg, #fffdf8 0%, #f8f5ed 100%);
+    }
+
+    .testimonial-card {
+        position: relative;
+        overflow: hidden;
+        transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+    .testimonial-card::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #141414, #facc15, #141414);
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(250,204,21,.45);
+        box-shadow: 0 26px 60px rgba(20,20,20,.12);
+    }
+
+    .testimonial-index {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .14em;
+        color: #9a8f78;
+    }
+
+    @media (max-width: 768px) {
+        .testimonials-section {
+            padding-top: 72px;
+            padding-bottom: 72px;
+        }
+
+        .testimonial-arrow {
+            display: none;
+        }
+    }
+
+
+
+    /* ==========================================================
+       Caff Stack unified dark theme refinements
+       ========================================================== */
+
+    .metrics-section {
+        background:
+            radial-gradient(circle at 18% 10%, rgba(250,204,21,.08), transparent 25%),
+            radial-gradient(circle at 86% 75%, rgba(255,255,255,.035), transparent 24%),
+            linear-gradient(180deg, #070707 0%, #0c0c0c 100%) !important;
+    }
+
+    .metrics-section .text-black,
+    .metrics-section .text-gray-900,
+    .metrics-section .text-gray-600,
+    .metrics-section .text-gray-500,
+    .metrics-section .text-gray-400 {
+        color: inherit !important;
+    }
+
+    .metrics-section h2,
+    .metrics-section .font-bold.text-black,
+    .metrics-section .font-semibold.text-gray-900 {
+        color: #fff !important;
+    }
+
+    .metrics-section p,
+    .metrics-section .text-gray-600,
+    .metrics-section .text-gray-500,
+    .metrics-section .text-gray-400 {
+        color: #a3a3a3 !important;
+    }
+
+    .metrics-section .bg-white {
+        background: linear-gradient(180deg, #161616 0%, #0f0f0f 100%) !important;
+    }
+
+    .metrics-section .border-yellow-400\/20 {
+        border-color: rgba(250,204,21,.16) !important;
+    }
+
+    .metrics-section .recognition-card,
+    .metrics-section .metric-card {
+        box-shadow: 0 24px 60px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.035) !important;
+    }
+
+    .metrics-section .recognition-card:hover,
+    .metrics-section .metric-card:hover {
+        box-shadow: 0 30px 70px rgba(0,0,0,.35), 0 0 30px rgba(250,204,21,.05) !important;
+    }
+
+    .testimonials-section {
+        background:
+            radial-gradient(circle at 12% 18%, rgba(250,204,21,.07), transparent 25%),
+            radial-gradient(circle at 88% 82%, rgba(255,255,255,.035), transparent 25%),
+            linear-gradient(180deg, #0b0b0b 0%, #121212 100%) !important;
+    }
+
+    .testimonials-section h2,
+    .testimonials-section .text-[#141414],
+    .testimonials-section .font-bold {
+        color: #fff !important;
+    }
+
+    .testimonials-section .text-gray-600,
+    .testimonials-section .text-gray-500 {
+        color: #a3a3a3 !important;
+    }
+
+    .testimonials-section .bg-white\/95 {
+        background: rgba(20,20,20,.94) !important;
+        color: #fff !important;
+    }
+
+    .testimonials-section .bg-white\/90 {
+        background: linear-gradient(180deg, rgba(24,24,24,.98), rgba(15,15,15,.98)) !important;
+        border-color: rgba(255,255,255,.08) !important;
+        box-shadow: 0 24px 55px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.035) !important;
+    }
+
+    .testimonials-section .border-black\/8 {
+        border-color: rgba(255,255,255,.08) !important;
+    }
+
+    .testimonials-section .border-t {
+        border-color: rgba(255,255,255,.08) !important;
+    }
+
+    .testimonials-section .testimonial-card:hover {
+        border-color: rgba(250,204,21,.35) !important;
+        box-shadow: 0 30px 70px rgba(0,0,0,.38), 0 0 32px rgba(250,204,21,.04) !important;
+    }
+
+    .testimonials-section .testimonial-arrow:hover {
+        background: rgba(250,204,21,.09) !important;
+        color: #facc15 !important;
+    }
+
+    .estimator-section {
+        background:
+            radial-gradient(circle at 84% 38%, rgba(250,204,21,.10), transparent 25%),
+            linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+    }
+
+    .estimator-shell {
+        background:
+            radial-gradient(circle at 80% 10%, rgba(250,204,21,.06), transparent 34%),
+            linear-gradient(135deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
+        box-shadow: 0 28px 80px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.035);
+    }
+
+    .estimator-art {
+        border-left: 1px solid rgba(255,255,255,.07);
+        background: linear-gradient(180deg, rgba(250,204,21,.045), rgba(255,255,255,.015));
+    }
+
+    .estimator-btn {
+        box-shadow: 0 14px 34px rgba(250,204,21,.16), inset 0 1px 0 rgba(255,255,255,.35);
+    }
+
+    .estimator-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 1024px) {
+        .estimator-art {
+            border-left: 0;
+            border-top: 1px solid rgba(255,255,255,.07);
+        }
+    }
+
+</style>
+
+<script src="test.js"></script>
+</body>
+</html>
